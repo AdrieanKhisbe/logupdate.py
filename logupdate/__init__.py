@@ -1,8 +1,14 @@
 import sys
 import cursor
-from ansiescapes import eraseLines
 
+ESC = '\u001B['
 
+def erase_lines(count):
+    return "".join([
+         (ESC + "2K") # erase Line
+       + (ESC + "1A" if i < count -1 else "") # cursor up
+        for i in range(count)
+    ]) + ESC + "G"
 
 class LogUpdate():
 
@@ -15,8 +21,7 @@ class LogUpdate():
         if not self.options["show_cursor"]:
             cursor.hide()
         output = " ".join(message) + "\n"
-        print(eraseLines(self.prev_line_count))
-        stream.write(eraseLines(self.prev_line_count) + output)
+        self.stream.write(erase_lines(self.prev_line_count) + output)
         self.prev_line_count = len(output.split("\n"))
 
     def __call__(self, *message):
