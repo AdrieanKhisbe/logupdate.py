@@ -11,6 +11,7 @@ cursor = "*"
 pylint = "*"
 twine = "*"
 pytest = "*"
+pyte = "*"
 
 [requires]
 python_version = "3.7"
