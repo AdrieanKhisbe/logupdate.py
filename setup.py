@@ -18,18 +18,17 @@ setup(
     # test_suite="test",
     keywords="",
     classifiers=[
-        classifier.strip() for classifier in """
-        Development Status :: 4 - Beta
-        Environment :: Console
-        Operating System :: OS Independent
-        License :: OSI Approved :: MIT License
-        Intended Audience :: Developers
-        Programming Language :: Python
-        Programming Language :: Python :: 3
-        Programming Language :: Python :: 3.6
-        Programming Language :: Python :: 3.7
-        Programming Language :: Python :: Implementation :: PyPy
-        Topic :: Software Development :: Libraries :: Python Modules
-        Topic :: System :: Logging
-    """.split("\n")]
+        "Development Status :: 4 - Beta",
+        "Environment :: Console",
+        "Operating System :: OS Independent",
+        "License :: OSI Approved :: MIT License",
+        "Intended Audience :: Developers",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: Implementation :: PyPy",
+        "Topic :: Software Development :: Libraries :: Python Modules",
+        "Topic :: System :: Logging"
+        ]
 )

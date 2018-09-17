@@ -9,6 +9,7 @@ cursor = "*"
 
 [dev-packages]
 pylint = "*"
+twine = "*"
 
 [requires]
 python_version = "3.7"
