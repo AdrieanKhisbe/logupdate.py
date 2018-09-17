@@ -25,3 +25,29 @@ def test_append_several_message():
 
     output = project_output(stream)
     assert output[0].strip() == "Bonjour"
+    assert output[1].strip() == ""
+
+def test_append_multiline_message():
+    stream = io.StringIO()
+    logupdate_function = logupdate.create(stream)
+    logupdate_function("Hola\nQue tal?")
+    logupdate_function("Bonchour\nFou Zallez bien?")
+    logupdate_function("Bonjour\nCa va?")
+
+    output = project_output(stream)
+    assert output[0].strip() == "Bonjour"
+    assert output[1].strip() == "Ca va?"
+
+def test_append_wraptexted_message():
+    stream = io.StringIO()
+    logupdate_function = logupdate.create(stream)
+    logupdate_function("hihi " * 16)
+    logupdate_function(("haha " * 32).strip())
+
+    output = project_output(stream)
+    print(output)
+    assert output[0].strip() == ("haha " * 16).strip()
+    assert output[2].strip() == ("haha " * 16).strip()
+    # for some reason in the screen there is an inserted newline.
+    assert output[3].strip() == ""
+    assert output[4].strip() == ""
