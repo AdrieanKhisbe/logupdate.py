@@ -3,7 +3,7 @@ import cursor
 from ansiwrap import wrap
 from shutil import get_terminal_size
 
-ESC = '\u001B['
+ESC = "\u001B["
 
 def erase_lines(count):
     return "".join([
