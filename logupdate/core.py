@@ -31,15 +31,18 @@ class LogUpdate():
         lines = [l for line in paragraphs for l in line]
         self.stream.write(erase_lines(self.prev_line_count) + "\n".join(lines) + "\n")
         self.prev_line_count = 1 + len(lines)
+        return self
 
     def clear(self):
         self.stream.write(erase_lines(self.prev_line_count))
         self.prev_line_count = 0
+        return self
 
     def done(self):
         self.prev_line_count = 0
         if not self.options["show_cursor"]:
             cursor.show()
+        return self
 
 logupdate = LogUpdate(sys.stdout)
 logupdate.stderr = LogUpdate(sys.stderr)

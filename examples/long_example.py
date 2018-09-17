@@ -13,4 +13,4 @@ And that use also multilines!""")
 sleep(3)
 
 logupdate.clear()
-logupdate("Voilà")
+logupdate("Voilà").done()
