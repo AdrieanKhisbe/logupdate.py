@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name="logupdate",
-    version="0.1.0",
+    version="0.1.1",
     author="Adriean Khisbe",
     author_email="adriean.khisbe@live.fr",
     description="Log by overwriting the previous output in the terminal",
@@ -16,7 +16,7 @@ setup(
     # TODO setup tests
     # tests_require=["tox", "pytest", "ansicolors>=1.1.8", "coverage", "pytest-cov"],
     # test_suite="test",
-    keywords="",
+    keywords="", # TODO
     classifiers=[
         "Development Status :: 4 - Beta",
         "Environment :: Console",
