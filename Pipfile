@@ -10,6 +10,7 @@ cursor = "*"
 [dev-packages]
 pylint = "*"
 twine = "*"
+pytest = "*"
 
 [requires]
 python_version = "3.7"
