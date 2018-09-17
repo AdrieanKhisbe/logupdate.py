@@ -10,18 +10,18 @@ def project_output(stream):
 
 def test_append_simple_message():
     stream = io.StringIO()
-    logupdate_function = logupdate.create(stream)
-    logupdate_function("Hello")
+    log = logupdate.create(stream)
+    log("Hello")
     output = project_output(stream)
     assert output[0].strip() == "Hello"
 
 def test_append_several_message():
     stream = io.StringIO()
-    logupdate_function = logupdate.create(stream)
-    logupdate_function("Hello")
-    logupdate_function("Hola")
-    logupdate_function("Bonchour")
-    logupdate_function("Bonjour")
+    log = logupdate.create(stream)
+    log("Hello")
+    log("Hola")
+    log("Bonchour")
+    log("Bonjour")
 
     output = project_output(stream)
     assert output[0].strip() == "Bonjour"
@@ -29,10 +29,10 @@ def test_append_several_message():
 
 def test_append_multiline_message():
     stream = io.StringIO()
-    logupdate_function = logupdate.create(stream)
-    logupdate_function("Hola\nQue tal?")
-    logupdate_function("Bonchour\nFou Zallez bien?")
-    logupdate_function("Bonjour\nCa va?")
+    log = logupdate.create(stream)
+    log("Hola\nQue tal?")
+    log("Bonchour\nFou Zallez bien?")
+    log("Bonjour\nCa va?")
 
     output = project_output(stream)
     assert output[0].strip() == "Bonjour"
@@ -40,9 +40,9 @@ def test_append_multiline_message():
 
 def test_append_wraptexted_message():
     stream = io.StringIO()
-    logupdate_function = logupdate.create(stream)
-    logupdate_function("hihi " * 16)
-    logupdate_function(("haha " * 32).strip())
+    log = logupdate.create(stream)
+    log("hihi " * 16)
+    log(("haha " * 32).strip())
 
     output = project_output(stream)
     print(output)
