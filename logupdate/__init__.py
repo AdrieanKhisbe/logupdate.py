@@ -27,4 +27,15 @@ class LogUpdate():
     def __call__(self, *message):
         self.render(*message)
 
+    def clear(self):
+        self.stream.write(erase_lines(self.prev_line_count))
+        self.prev_line_count = 0
+
+    def done(self):
+        self.prev_line_count = 0
+        if not self.options["show_cursor"]:
+            cursor.show()
+
 logupdate = LogUpdate(sys.stdout)
+logupdate.stderr = LogUpdate(sys.stderr)
+logupdate.create = LogUpdate
