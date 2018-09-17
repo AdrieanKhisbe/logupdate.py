@@ -22,7 +22,10 @@ class LogUpdate():
     def __call__(self, *message):
         if not self.options["show_cursor"]:
             cursor.hide()
-        lines = wrap(" ".join(message), get_terminal_size().columns or 80)
+        lines = wrap(" ".join(message),
+                     get_terminal_size().columns or 80,
+                     drop_whitespace=False,   # trim
+			         break_long_words=False)  # wordWrap
         self.stream.write(erase_lines(self.prev_line_count) + "\n".join(lines) + "\n")
         self.prev_line_count = 1 + len(lines)
 
