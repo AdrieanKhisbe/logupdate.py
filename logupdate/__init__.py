@@ -1,5 +1,8 @@
 import sys
 import cursor
+from ansiescapes import eraseLines
+
+
 
 class LogUpdate():
 
@@ -12,7 +15,9 @@ class LogUpdate():
         if not self.options["show_cursor"]:
             cursor.hide()
         output = " ".join(message) + "\n"
-        print(output)
+        print(eraseLines(self.prev_line_count))
+        stream.write(eraseLines(self.prev_line_count) + output)
+        self.prev_line_count = len(output.split("\n"))
 
     def __call__(self, *message):
         self.render(*message)
