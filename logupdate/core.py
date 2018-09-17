@@ -17,15 +17,12 @@ class LogUpdate():
         self.stream = stream
         self.prev_line_count = 0
 
-    def render(self, *message):
+    def __call__(self, *message):
         if not self.options["show_cursor"]:
             cursor.hide()
         output = " ".join(message) + "\n"
         self.stream.write(erase_lines(self.prev_line_count) + output)
         self.prev_line_count = len(output.split("\n"))
-
-    def __call__(self, *message):
-        self.render(*message)
 
     def clear(self):
         self.stream.write(erase_lines(self.prev_line_count))
