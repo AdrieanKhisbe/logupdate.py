@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name="logupdate",
-    version="0.1.1",
+    version="0.2.0",
     author="Adriean Khisbe",
     author_email="adriean.khisbe@live.fr",
     description="Log by overwriting the previous output in the terminal",
