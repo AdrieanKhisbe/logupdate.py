@@ -12,6 +12,8 @@ pylint = "*"
 twine = "*"
 pytest = "*"
 pyte = "*"
+tox = "*"
+tox-pyenv = "*"
 
 [requires]
 python_version = "3.7"
