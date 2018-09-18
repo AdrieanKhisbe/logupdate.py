@@ -1,6 +1,7 @@
 # logupdate.py
 
 [![PyPI](https://img.shields.io/pypi/v/logupdate.svg)](https://pypi.org/project/logupdate/)
+[![Supported Python Versions](https://img.shields.io/pypi/pyversions/logupdate.svg)](https://pypi.python.org/pypi/logupdate)
 [![Build Status](https://travis-ci.org/AdrieanKhisbe/logupdate.py.svg?branch=master)](https://travis-ci.org/AdrieanKhisbe/logupdate.py)
 
 > Log by overwriting the previous output in the terminal. 
