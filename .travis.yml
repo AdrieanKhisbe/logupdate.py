@@ -21,3 +21,7 @@ install:
 
 script:
   - pipenv run tox
+
+cache:
+  directories:
+   - $HOME/.pyenv
