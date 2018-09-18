@@ -14,6 +14,7 @@ pytest = "*"
 pyte = "*"
 tox = "*"
 tox-pyenv = "*"
+tox-travis = "*"
 
 [requires]
 python_version = "3.7"
