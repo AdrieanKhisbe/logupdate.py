@@ -17,7 +17,7 @@ setup(
     setup_requires=["pytest-runner"],
     tests_require=["tox", "pytest", "pyte"],
     test_suite="tests",
-    keywords="", # TODO
+    keywords="cli terminal log logger logging shell update animation progress",
     classifiers=[
         "Development Status :: 4 - Beta",
         "Environment :: Console",
