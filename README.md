@@ -35,7 +35,7 @@ You can find some example in the dedicated [examples](./examples) folder.
 ## API
 - `logupdate(text, ...)`: log to stdout (overwriting previous input)
 - `logupdate.clear()`: Clear previous logged output
-- `logupdate.done()`: Persist the logged output. This enable to start a new "log session" below
+- `logupdate.done()`: Persist the logged output. This enable to start a new "log session" below.
 
 - `logupdate.stderr(text, ...)`: log to stderr
 - `logupdate.stderr.clear()`: clear stderr

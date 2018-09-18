@@ -14,9 +14,9 @@ setup(
     license="MIT",
     packages=["logupdate"],
     install_requires=["cursor", "ansiwrap"],
-    # TODO setup tests
-    # tests_require=["tox", "pytest", "ansicolors>=1.1.8", "coverage", "pytest-cov"],
-    # test_suite="test",
+    setup_requires=["pytest-runner"],
+    tests_require=["tox", "pytest", "pyte"],
+    test_suite="tests",
     keywords="", # TODO
     classifiers=[
         "Development Status :: 4 - Beta",
