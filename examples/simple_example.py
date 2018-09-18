@@ -1,7 +1,7 @@
 from logupdate import logupdate
 from time import sleep
 
-logupdate("Hello")
+logupdate("Hello")("Hola")
 sleep(2)
 logupdate("Hello You")
 logupdate.done()
@@ -13,3 +13,5 @@ sleep(1)
 logupdate("Powered by logupdate ;)")
 sleep(1)
 logupdate.clear().done()
+
+
