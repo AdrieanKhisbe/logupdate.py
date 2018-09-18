@@ -1,0 +1,23 @@
+language: python
+python:
+  - 3.7.0
+env:
+  global:
+    - PY37=3.7.0
+    - PY36=3.6.6
+    - PY35=3.5.6
+    - PY34=3.4.9
+    - PY33=3.3.7
+before_install:
+  - pyenv install $PY37
+  - pyenv install $PY36
+  - pyenv install $PY35
+  - pyenv install $PY34
+  - pyenv install $PY33
+install:
+  - pyenv local $PY37 $PY36 $PY35 $PY34 $PY33
+  - pip install pipenv
+  - pipenv install --dev
+
+script:
+  - pipenv run tox
