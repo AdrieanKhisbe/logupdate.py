@@ -14,13 +14,13 @@ def erase_lines(count):
 
 class LogUpdate():
 
-    def __init__(self, stream, options = None):
-        self.options = {"show_cursor": False, **(options or {})}
+    def __init__(self, stream, show_cursor = None):
+        self.show_cursor = show_cursor
         self.stream = stream
         self.prev_line_count = 0
 
     def __call__(self, *message):
-        if not self.options["show_cursor"]:
+        if not self.show_cursor:
             cursor.hide()
         paragraphs = [wrap(line,
                      get_terminal_size().columns or 80,
@@ -40,7 +40,7 @@ class LogUpdate():
 
     def done(self):
         self.prev_line_count = 0
-        if not self.options["show_cursor"]:
+        if not self.show_cursor:
             cursor.show()
         return self
 
