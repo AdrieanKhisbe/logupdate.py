@@ -26,7 +26,7 @@ logupdate("You can pimp your interactive commands with logupdate")
 sleep(1)
 logupdate("Don't forget the secret ;)")
 sleep(1)
-logupdate.clear()
+logupdate.clear().done()
 ```
 
 ## Examples
@@ -35,14 +35,15 @@ You can find some example in the dedicated [examples](./examples) folder.
 
 ## API
 - `logupdate(text, ...)`: log to stdout (overwriting previous input)
-- `logupdate.clear()`: Clear previous logged output
-- `logupdate.done()`: Persist the logged output. This enable to start a new "log session" below.
+- `logupdate.clear([restore_cursor=None])`: Clear previous logged output. This can also restore the cursor if asked.
+- `logupdate.done([restore_cursor=None])`: Persist the logged output. This enable to start a new "log session" below.
+  This restores the cursor unless you ask not to.
 
 - `logupdate.stderr(text, ...)`: log to stderr
-- `logupdate.stderr.clear()`: clear stderr
-- `logupdate.stderr.done()`:  persist stderr
+- `logupdate.stderr.clear([restore_cursor=None])`: clear stderr.
+- `logupdate.stderr.done([restore_cursor=None])`:  persist stderr.
 
-- `logupdate.create(stream, [options])` : return a `logupdate` method dedicated to log to given `stream`. Options, dict with key `show_cursor` (default to `False`)
+- `logupdate.create(stream, [show_cursor=False])` : return a `logupdate` method dedicated to log to given `stream`.
 
-# License
+## License
 MIT © [AdrieanKhisbe](https://github.com/AdrieanKhisbe)
