@@ -4,7 +4,7 @@ from time import sleep
 logupdate("Hello")("Hola")
 sleep(2)
 logupdate("Hello You")
-logupdate.done()
+logupdate.done(restore_cursor=False)
 sleep(1)
 logupdate("I'm gonna leave")
 sleep(1)

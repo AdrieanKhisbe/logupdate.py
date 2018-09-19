@@ -33,14 +33,16 @@ class LogUpdate():
         self.prev_line_count = 1 + len(lines)
         return self
 
-    def clear(self):
+    def clear(self, restore_cursor=None):
         self.stream.write(erase_lines(self.prev_line_count))
+        if restore_cursor:
+            cursor.show()
         self.prev_line_count = 0
         return self
 
-    def done(self):
+    def done(self, restore_cursor=None):
         self.prev_line_count = 0
-        if not self.show_cursor:
+        if restore_cursor if (restore_cursor is not None) else not self.show_cursor:
             cursor.show()
         return self
 
