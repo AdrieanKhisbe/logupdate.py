@@ -1,12 +1,16 @@
 language: python
 python:
-  - "3.7-dev"
+  - "3.8"
+  - "3.7"
   - "3.6"
-  - "3.5"
 
 install:
-  - pip install pipenv
-  - pipenv install --dev
+   - pip install --upgrade pip
+   - pip install poetry
+   - poetry install -v
 
 script:
-  - pipenv run tox
+  - poetry run task test
+
+after_success:
+  - pipenv run codecov
