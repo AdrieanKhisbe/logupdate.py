@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "logupdate"
-version = "0.3.0"
+version = "0.3.1"
 description = "Log by overwriting the previous output in the terminal"
 authors = ["Adriean Khisbe <adriean.khisbe@live.fr>"]
 license = "MIT"
